@@ -1,21 +1,29 @@
-import React, { memo, useEffect } from 'react';
-import { connect, shallowEqual, useDispatch, useSelector } from "react-redux";
+import React, { memo } from 'react';
 
-import { getTopBannersAction } from './store/actionCreators';
+import {
+  RecommendWrapper,
+  Content,
+  RecommendLeft,
+  RecommendRight
+} from './style';
+import XHTopBanner from "./c-cpns/top-banner";
+import XHHotRecommend from "./c-cpns/hot-recommend";
+import XHNewAlbum from "./c-cpns/new-album";
+import XHRecommendRanking from "./c-cpns/recommend-ranking";
 
 export default memo(function XHRecommend(props) {
-  const dispatch = useDispatch();
-  const { topBanners } = useSelector((state) => ({
-    topBanners: state.recommend.topBanners
-  }), shallowEqual)
-
-  useEffect(() => {
-    dispatch(getTopBannersAction());
-  }, [dispatch])
 
   return (
-    <div>
-      <h2>XHRecommend: {topBanners.length}</h2>
-    </div>
+    <RecommendWrapper>
+      <XHTopBanner />
+      <Content className="wrap-v2">
+        <RecommendLeft>
+          <XHHotRecommend />
+          <XHNewAlbum />
+          <XHRecommendRanking />
+        </RecommendLeft>
+        <RecommendRight></RecommendRight>
+      </Content>
+    </RecommendWrapper>
   )
 });

@@ -1,0 +1,1 @@
+export const Hot_RECOMMEND_LIMMIT = 8;
