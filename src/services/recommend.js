@@ -14,3 +14,21 @@ export const getHotRecommends = (limit) => {
     }
   })
 }
+
+export const getNewAlbums = (limit) => {
+  return request({
+    url: "/top/album",
+    params: {
+      limit
+    }
+  })
+}
+
+export const getTopList = (idx) => {
+  return request({
+    url: "/top/list",
+    params: {
+      idx
+    }
+  })
+}
