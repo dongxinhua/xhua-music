@@ -1,0 +1,1 @@
+export const CHANGE_CURRENT_MUSIC = "player/CHANGE_CURRENT_MUSIC";
