@@ -117,4 +117,5 @@ body, textarea, select, input, button {
   bottom: 50px;
   background-color: rgba(0, 0, 0, .5);
   color: #fff;
+  font-size: 22px;
 }

@@ -7,6 +7,7 @@ import XHSongs from "@/pages/discover/c-pages/songs";
 import XHDjradio from "@/pages/discover/c-pages/djradio";
 import XHArtist from "@/pages/discover/c-pages/artist";
 import XHAlbum from "@/pages/discover/c-pages/album";
+import XHPlayer from "@/pages/player";
 
 import XHMine from "@/pages/mine";
 import XHFriend from "@/pages/friend";
@@ -55,6 +56,10 @@ const routes = [
       {
         path: "/discover/album",
         component: XHAlbum
+      },
+      {
+        path: "/discover/player",
+        component: XHPlayer
       }
     ]
   },

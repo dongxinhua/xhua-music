@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { getSizeImage } from '@/utils/format-utils';
-// import { getSongDetailAction } from '@/pages/player/store';
+import { getSongsDetailAction } from '@/pages/player/store';
 
 import { TopRankingWrapper } from './style';
 
@@ -12,12 +12,12 @@ export default memo(function XHTopRanking(props) {
   const { tracks = [] } = info;
 
   // redux hooks
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // other handle
-  // const playMusic = (item) => {
-  //   dispatch(getSongDetailAction(item.id));
-  // }
+  const playMusic = (item) => {
+    dispatch(getSongsDetailAction(item.id));
+  }
 
   return (
     <TopRankingWrapper>
@@ -44,7 +44,7 @@ export default memo(function XHTopRanking(props) {
                   <span className="name text-nowrap">{item.name}</span>
                   <div className="operate">
                     <button className="btn sprite_02 play" 
-                            ></button>
+                            onClick={e => playMusic(item)}></button>
                     <button className="btn sprite_icon2 addto"></button>
                     <button className="btn sprite_02 favor"></button>
                   </div>
